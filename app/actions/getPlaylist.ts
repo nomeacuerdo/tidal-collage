@@ -104,7 +104,7 @@ const getPlaylist = async (
 
     if (playlistData.error) throw new Error(playlistData.error?.errors?.[0]?.detail || 'API error fetching playlist');
 
-    const tracks = playlistData?.data?.data?.map(item => item?.id);
+    const tracks = playlistData?.data?.data?.map(item => item?.id).slice(0, 24);
     const trackData = await tidalApi.GET('/tracks', {
       params: {
         query: { countryCode: 'US', include: ['albums', 'sourceFile'], "filter[id]": tracks },
@@ -131,8 +131,6 @@ const getPlaylist = async (
     }, []);
 
     const filteredData: string[] = (width320Items?.filter((item: string) => !item.includes('video'))) ?? [];
-
-    console.log('sss', filteredData);
 
     return { playlistId, data: filteredData };
   } catch (err: unknown) {
