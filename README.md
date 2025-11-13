@@ -9,7 +9,9 @@ You can change the dimensions and columns of the canvas to generate an image! :-
 ## About
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-This uses Tidal API
+This uses the [Tidal API](https://developer.tidal.com/documentation/api-sdk/api-sdk-overview) and the [Tidal Web SDK](https://github.com/tidal-music/tidal-sdk-web)
+
+**Don't forget to create your .env file! There's a sample file**
 
 ## Getting Started
 
